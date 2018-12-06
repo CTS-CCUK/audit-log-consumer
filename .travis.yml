@@ -1,0 +1,28 @@
+sudo: true
+services:
+- docker
+- mongodb
+branches:
+  only:
+  - master
+  - dev
+  - release
+language: java
+jdk:
+- oraclejdk8
+before_cache:
+- rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+- rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+  - $HOME/.gradle/caches/
+  - $HOME/.gradle/wrapper/
+script:
+- ./gradlew clean build
+after_script:
+- docker login ccicreativeuk.azurecr.io -u ccicreativeuk -p $DOCKER_PASSWORD
+- docker build -t ccicreativeuk.azurecr.io/cci-audit-log-consumer:$TRAVIS_BUILD_NUMBER .
+- docker push ccicreativeuk.azurecr.io/cci-audit-log-consumer:$TRAVIS_BUILD_NUMBER
+- bash ./scripts/deploy_acs.sh
+notifications:
+    slack: clearchanneluk:aLLr2EHZ5mumwZVjHnzbRy4A

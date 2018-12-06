@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ccuk.listener.AuditLogListenerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2018-11-13T17:34:24" hostname="UKCCOL0403WOK" time="0.079">
+  <properties/>
+  <testcase name="createAuditLog" classname="com.ccuk.listener.AuditLogListenerTest" time="0.079"/>
+  <system-out><![CDATA[2018-11-13 17:34:24.482  INFO 15208 --- [    Test worker] com.ccuk.listener.AuditLogListener       : Received Audit Log : AuditLog [id=ARmuysvGRz, uniqueId=mAxhowE4Fo, annexFileName=5beClH_UE9, annexStatus=true, scheduleFileName=cBp9WKK4tY, scheduleStatus=true, username=rzGsPSgTg3, system=yNdwa3yivq, submittedDateTime=Tue Nov 13 17:34:24 GMT 2018, dateScheduled=[Tue Nov 13 17:34:24 GMT 2018, Tue Nov 13 17:34:24 GMT 2018, Tue Nov 13 17:34:24 GMT 2018, Tue Nov 13 17:34:24 GMT 2018, Tue Nov 13 17:34:24 GMT 2018], countryCode=FR]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
